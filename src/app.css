@@ -1,0 +1,167 @@
+:root {
+  font-family: 'Avenir Next', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #1d2939;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef6f0 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.author {
+  font-size: 14px;
+  color: #475467;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0 0 16px;
+  color: #475467;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: #ffffffd9;
+  backdrop-filter: blur(3px);
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.dropzone {
+  border: 1.5px dashed #7f56d9;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  background: #f7f3ff;
+}
+
+.dropzone.active {
+  background: #ede7ff;
+  border-color: #6941c6;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #344054;
+}
+
+select,
+input[type='number'],
+input[type='text'] {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+input[type='file'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #7f56d9;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #344054;
+}
+
+button:disabled {
+  background: #98a2b3;
+  cursor: not-allowed;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.preview-wrap {
+  overflow: auto;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.error {
+  color: #b42318;
+  font-size: 13px;
+}
+
+.small {
+  color: #667085;
+  font-size: 12px;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
