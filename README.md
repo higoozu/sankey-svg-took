@@ -1,4 +1,4 @@
-# Sankey SVG Tool (macOS)
+# Sankey SVG Tool (macOS + Windows)
 
 轻量桌面工具：导入 `.xlsx`，支持 2-4 层字段映射，生成桑基图并导出可分层编辑的 `.svg`。
 
@@ -38,7 +38,7 @@ npm install
 npm run tauri:dev
 ```
 
-## 构建 mac App / DMG
+## 本地构建
 
 普通构建：
 
@@ -54,6 +54,22 @@ npm run tauri:build -- --target universal-apple-darwin
 
 构建产物目录：`src-tauri/target/`。
 
-## 与原脚本关系
+### Windows（本机在 Windows 时）
 
-原始脚本 `桑基图.py` 的逻辑是固定 `纬度 -> 领域 -> 行业` 三层，本工具扩展为 2-4 层可配置映射，并提供图形界面与分层 SVG 导出。
+```bash
+npm run tauri:build -- --bundles nsis
+```
+
+## GitHub Actions 自动打包
+
+仓库已提供工作流：
+
+- `.github/workflows/build-desktop.yml`
+- 支持两种触发：
+  - 手动触发：`Actions -> Build Desktop Apps -> Run workflow`
+  - 打 tag 触发：如 `v0.1.1`
+
+该工作流会构建并上传：
+
+- `macos-universal-bundles`：`.app` + `.dmg`
+- `windows-nsis-bundle`：Windows 安装包 `.exe`
